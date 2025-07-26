@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ページ作成者 -->
+    <meta name="author" content="Ren KAWABATA">
+    <!-- ページ内容を表すキーワード（3〜5つくらい） -->
+    <meta name="keywords" content="HTML, CSS, javascript, 占い, 自己分析, 音楽ジャンル, タグ診断">
+
+    <!-- CSSとの紐付け．CSSへのパスは相対パスで記述する． -->
+    <link rel="stylesheet" href="./css/main.css">
+
+    <!-- ゲームっぽいフォントを読み込む（日本語非対応） -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+
+    <title>あなたの音楽ジャンル診断♪</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>あなたの音楽ジャンル診断♪</h1>
+            <p>いくつかの質問に答えて、あなたに最も近いイメージの音楽ジャンルを見つけましょう！</p>
+        </header>
+
+        <main>
+            <!-- id属性で名前を付ける．id属性値はページ内でユニークにしなければならない．（q1） -->
+            <div class="question" id="q1">
+                <p>Q1. 自分を一言で表すなら？</p>
+                <!-- 選択肢(option)ボタンをまとめる -->
+                <div class="options">
+                    <!-- 各ボタンをクリックすると JavaScript の answer() 関数が実行され、選んだ答え（文字列）が引数として渡される -->
+                    <button onclick="answer('intellectual')">知的</button>
+                    <button onclick="answer('passionate')">情熱的</button>
+                    <button onclick="answer('stylish')">おしゃれ</button>
+                    <button onclick="answer('free')">自由人</button>
+                </div>
+            </div>
+
+            <div class="question" id="q2" style="display:none">
+                <p>Q2. 好きな時間帯は？</p>
+                <div class="options">
+                    <button onclick="answer('morning')">朝</button>
+                    <button onclick="answer('night')">夜</button>
+                </div>
+            </div>
+
+            <div class="question" id="q3" style="display:none">
+                <p>Q3. どんな場所が落ち着く？</p>
+                <div class="options">
+                    <button onclick="answer('nature')">自然</button>
+                    <button onclick="answer('city')">都会</button>
+                </div>
+            </div>
+
+            <div id="result"></div>
+        </main>
+
+        <footer>
+            Copyright &copy; Ren KAWABATA, All Rights Reserved.
+        </footer>
+    </div>
+
+    <!-- jQuery 先に読み込ませる -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- 自分のjavascriptファイル -->
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
